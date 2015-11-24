@@ -1,1 +1,3 @@
-# diceware
+# Diceware generator website
+
+- **IN DEVELOPMENT**
