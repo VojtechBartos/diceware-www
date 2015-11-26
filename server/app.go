@@ -17,7 +17,7 @@ func NewApp() *App {
     app.Engine.LoadHTMLGlob("server/templates/*.templ.html")
     app.Engine.Static("/static", "server/static")
 
-    app.Engine.GET("/api/generate/", ApiGeneratePasswordRoute)
+    app.Engine.GET("/api/passphrase/generate/", ApiGeneratePassphraseRoute)
     app.Engine.GET("/", IndexRoute)
 
     return app

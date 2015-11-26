@@ -9,11 +9,11 @@ import (
 
 func IndexRoute(c *gin.Context) {
     c.HTML(200, "index.templ.html", gin.H{
-        "title": "Diceware password generator",
+        "title": "Diceware passphrase generator",
     })
 }
 
-func ApiGeneratePasswordRoute(c *gin.Context) {
+func ApiGeneratePassphraseRoute(c *gin.Context) {
     // extracting length of password from query parameters
     var length int = 5
     if len(c.Query("parts")) > 0 {
