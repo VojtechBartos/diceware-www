@@ -1,0 +1,75 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# diceware
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+### Generating password [GET]
+
+Generating diceware password
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Location: /api/generate/
+
+    + Body
+
+            {
+                "meta": {
+                    "message": "Ok."
+                },
+                "data": {
+                    "passphrase": {
+                        "text": "randomgeneratedpasswordexampledude",
+                        "parts": [
+                            "random",
+                            "generated",
+                            "password",
+                            "example",
+                            "dude"
+                        ]
+                    }
+                }
+            }
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            Location: /api/generate/?parts=3
+
+    + Body
+
+            {
+                "meta": {
+                    "message": "Ok."
+                },
+                "data": {
+                    "passphrase": {
+                        "text": "randomgeneratedpassword",
+                        "parts": [
+                            "random",
+                            "generated",
+                            "password"
+                        ]
+                    }
+                }
+            }
+            
+
++ Response 400 (application/json)
+
+    + Headers
+
+            Location: /api/generate/?parts=string
+
+    + Body
+
+            {
+                "meta": {
+                    "message": "Parts need to be integer in range <1,99>."
+                }
+            }
