@@ -22,7 +22,8 @@ RUN go-wrapper install
 RUN \
   go get github.com/gin-gonic/gin && \
   go get github.com/codegangsta/cli
-RUN npm install && npm run build
+RUN npm install 
+RUN npm run build
 
 CMD ["go-wrapper", "run", "start"]
 
