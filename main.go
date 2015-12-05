@@ -3,8 +3,8 @@ package main
 import (
     "runtime"
     "os"
-    "./server"
 
+    "dicewa.re/server"
     "github.com/codegangsta/cli"
 )
 
@@ -13,19 +13,19 @@ func main() {
 
     app := cli.NewApp()
     app.Name = "diceware"
-    app.Usage = "Diceware password generator"
+    app.Usage = "Diceware password generator www/api"
 
     app.Commands = []cli.Command{
         {
-            Name:   "run",
-            Usage:  "Runs server",
-            Action: RunServer,
+            Name:   "start",
+            Usage:  "Start server",
+            Action: StartServer,
         },
     }
     app.Run(os.Args)
 }
 
-func RunServer(c *cli.Context) {
+func StartServer(c *cli.Context) {
     app := server.NewApp()
     app.Run(":8000")
 }
