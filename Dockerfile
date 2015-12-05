@@ -11,7 +11,7 @@ WORKDIR /go/src/dicewa.re
 # nodejs installation for frontend
 RUN \
   apt-get install -y curl && \
-  curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+  curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
   apt-get install -y nodejs
 
 # go installation for backend
