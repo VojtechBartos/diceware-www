@@ -13,7 +13,7 @@ func IndexRoute(c *gin.Context) {
     })
 }
 
-func ApiGeneratePassphraseRoute(c *gin.Context) {
+func ApiGetPassphraseRoute(c *gin.Context) {
     // extracting length of password from query parameters
     var length int = 5
     if len(c.Query("parts")) > 0 {

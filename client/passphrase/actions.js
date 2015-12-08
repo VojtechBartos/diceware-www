@@ -25,7 +25,7 @@ export function generatePassphrase(parts) {
   return dispatch => {
     dispatch(requestPassphrasePending(true));
 
-    const url = new URL('/api/passphrase/generate/').set('query', {
+    const url = new URL('/api/passphrase/').set('query', {
       parts: parseInt(parts) || 5
     });
 
