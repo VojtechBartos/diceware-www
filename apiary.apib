@@ -5,15 +5,17 @@ HOST: http://dicewa.re/
 
 Diceware™ is a method for picking passphrases that uses dice to select words at random from a special list called the Diceware Word List.
 
-### Generating password [GET]
 
-Generating diceware password
+## Generating Passphrase [/api/passphrase/generate/?parts={parts}]
+
++ Parameters
+    + parts (number) - number of required passphrase parts
+
+### Getting passphrase [GET]
+
+Getting generated passphrase
 
 + Response 200 (application/json)
-
-    + Headers
-
-            Location: /api/passphrase/generate/
 
     + Body
 
@@ -34,30 +36,7 @@ Generating diceware password
                     }
                 }
             }
-            
-+ Response 200 (application/json)
 
-    + Headers
-
-            Location: /api/passphrase/generate/?parts=3
-
-    + Body
-
-            {
-                "meta": {
-                    "message": "Ok."
-                },
-                "data": {
-                    "passphrase": {
-                        "text": "randomgeneratedpassword",
-                        "parts": [
-                            "random",
-                            "generated",
-                            "password"
-                        ]
-                    }
-                }
-            }
             
 
 + Response 400 (application/json)
