@@ -21,10 +21,19 @@ class App extends Component {
           List.
         </div>
 
-        <a style={style.github}
-           href="https://github.com/VojtechBartos/diceware-www">
-          github
-        </a>
+        <ul style={style.linksList}>
+          <li style={style.linksItem}>
+            <a style={style.link}
+               href="https://github.com/VojtechBartos/diceware-www">
+              github
+            </a>
+          </li>
+          <li>
+            <a style={style.link} href="http://docs.diceware.apiary.io/#">
+              API documentation
+            </a>
+          </li>
+        </ul>
 
         <Passphrase {...this.props} />
       </div>
@@ -54,12 +63,19 @@ const style = {
     maxWidth: '800px',
     textAlign: 'center',
     lineHeight: '150%',
-
   },
-  github: {
+  linksList: {
+    listStyle: 'none',
+    width: '230px',
+    marginBottom: '25px'
+  },
+  linksItem: {
+    float: 'left',
+    marginRight: '10px'
+  },
+  link: {
     textAlign: 'center',
-    color: '#4a4949',
-    marginBottom: '40px'
+    color: '#4a4949'
   },
   container: {
     display: '-webkit-flex',

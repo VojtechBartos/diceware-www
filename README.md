@@ -8,4 +8,4 @@
 
 - separate diceware logic to separate repo
 - ~~`copied` in redux global state~~
-- update/finish apiary blueprint
+- ~~update/finish apiary blueprint~~
