@@ -9,16 +9,9 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 
 export default class Password extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      copied: false
-    };
-  }
-
   static propTypes = {
     generatePassphrase: PropTypes.func.isRequired,
+    copiedPassphrase: PropTypes.func.isRequired,
     passphrase: PropTypes.instanceOf(Map)
   }
 
@@ -27,13 +20,11 @@ export default class Password extends Component {
   }
 
   generatePassphrase() {
-    this.setState({ copied: false }, () => {
-      this.props.generatePassphrase();
-    });
+    this.props.generatePassphrase();
   }
 
   onClipboardCopy() {
-    this.setState({ copied: true });
+    this.props.copiedPassphrase();
   }
 
   render() {
@@ -50,6 +41,7 @@ export default class Password extends Component {
 
   renderPassphrase() {
     const passphrase = this.props.passphrase.get('items').last();
+    const copied = this.props.passphrase.get('copied', false);
     if (!passphrase)
       return null;
 
@@ -58,7 +50,7 @@ export default class Password extends Component {
                        onCopy={() => this.onClipboardCopy()}>
         <div style={style.passphrase}>
           <div style={style.copied}>
-            {(this.state.copied) ? 'Copied to clipboad' : 'Click to clipboad'}
+            {(copied) ? 'Copied to clipboad' : 'Click to clipboad'}
           </div>
 
           {passphrase.parts.join(' ')}

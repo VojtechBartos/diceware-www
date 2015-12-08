@@ -5,6 +5,7 @@ import URL from 'url-parse';
 
 export const REQUEST_PASSPHRASE_PENDING = 'REQUEST_PASSPHRASE_PENDING';
 export const RECEIVE_PASSPHRASE = 'RECEIVE_PASSPHRASE';
+export const COPIED_PASSPHRASE = 'COPIED_PASSPHRASE';
 
 function receivePassphrase(passphrase) {
   return {
@@ -37,4 +38,10 @@ export function generatePassphrase(parts) {
         }, 500);
       });
   };
+}
+
+export function copiedPassphrase() {
+  return {
+    type: COPIED_PASSPHRASE
+  }
 }

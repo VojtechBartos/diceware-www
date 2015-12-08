@@ -7,5 +7,5 @@
 ## Todo's
 
 - separate diceware logic to separate repo
-- `copied` in redux global state
+- ~~`copied` in redux global state~~
 - update/finish apiary blueprint
