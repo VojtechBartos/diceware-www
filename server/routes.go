@@ -5,6 +5,7 @@ import (
     "strconv"
 
     "github.com/gin-gonic/gin"
+    "github.com/VojtechBartos/diceware"
 )
 
 func IndexRoute(c *gin.Context) {
@@ -32,7 +33,7 @@ func ApiGetPassphraseRoute(c *gin.Context) {
     }
 
     // generate password
-    passphrase := GeneratePassword(length)
+    passphrase := diceware.GeneratePassphrase(length)
 
     // send success response
     c.JSON(200, gin.H{

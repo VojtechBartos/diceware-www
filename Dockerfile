@@ -19,9 +19,6 @@ RUN go-wrapper download
 RUN go-wrapper install
 
 # installing dependencies
-RUN \
-  go get github.com/gin-gonic/gin && \
-  go get github.com/codegangsta/cli
 RUN npm install
 RUN npm run build
 
