@@ -2,7 +2,12 @@
 
 [![Dependency Status](https://david-dm.org/VojtechBartos/diceware-www.png)](https://david-dm.org/VojtechBartos/diceware-www) [![devDependency Status](https://david-dm.org/VojtechBartos/diceware-www/dev-status.png)](https://david-dm.org/VojtechBartos/diceware-www#info=devDependencies)
 
-- **IN DEVELOPMENT**
+Golang based web and api that allows you to generate passphrases via diceware passphrase algorithm.
+
+## Links
+
+- [API documentation](http://docs.diceware.apiary.io/#)
+- [Diceware golang library](https://github.com/VojtechBartos/diceware)
 
 ## Todo's
 
